@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Ali 💜</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: "Poppins", Arial, sans-serif;
+            color: #3d2452;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(210, 170, 255, 0.55), transparent 30%),
+                radial-gradient(circle at 85% 80%, rgba(178, 120, 240, 0.35), transparent 35%),
+                linear-gradient(135deg, #f3e8ff, #faf5ff, #ead7ff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px;
+        }
+
+        .floating {
+            position: fixed;
+            bottom: -80px;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0;
+            animation: floatUp linear infinite;
+        }
+
+        .heart {
+            font-size: 25px;
+        }
+
+        .pizza {
+            font-size: 30px;
+        }
+
+        .f1 {
+            left: 5%;
+            animation-duration: 10s;
+            animation-delay: 0s;
+        }
+
+        .f2 {
+            left: 18%;
+            animation-duration: 13s;
+            animation-delay: 2s;
+        }
+
+        .f3 {
+            left: 35%;
+            animation-duration: 9s;
+            animation-delay: 1s;
+        }
+
+        .f4 {
+            left: 52%;
+            animation-duration: 12s;
+            animation-delay: 4s;
+        }
+
+        .f5 {
+            left: 70%;
+            animation-duration: 10s;
+            animation-delay: 2s;
+        }
+
+        .f6 {
+            left: 87%;
+            animation-duration: 14s;
+            animation-delay: 1s;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg) scale(0.7);
+                opacity: 0;
+            }
+
+            15% {
+                opacity: 0.75;
+            }
+
+            50% {
+                transform: translateY(-50vh) rotate(180deg) scale(1);
+            }
+
+            100% {
+                transform: translateY(-115vh) rotate(360deg) scale(0.8);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            width: 100%;
+            max-width: 720px;
+            height: 90vh;
+            max-height: 900px;
+            position: relative;
+            z-index: 5;
+            padding: 42px 32px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.68);
+            border: 1px solid rgba(255, 255, 255, 0.85);
+            border-radius: 30px;
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            box-shadow: 0 25px 70px rgba(91, 45, 130, 0.18);
+            display: flex;
+            flex-direction: column;
+            animation: cardEnter 1.1s ease forwards;
+        }
+
+        @keyframes cardEnter {
+            from {
+                opacity: 0;
+                transform: translateY(35px) scale(0.97);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .main-heart {
+            display: inline-block;
+            font-size: 60px;
+            color: #9b59d0;
+            margin-bottom: 10px;
+            flex-shrink: 0;
+            animation: heartBeat 1.5s infinite ease-in-out;
+        }
+
+        @keyframes heartBeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.16);
+            }
+        }
+
+        h1 {
+            font-size: 38px;
+            color: #5b2d78;
+            margin-bottom: 10px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .subtitle {
+            color: #76558b;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            flex-shrink: 0;
+        }
+
+        .divider {
+            width: 50px;
+            height: 3px;
+            margin: 0 auto 25px;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #b47be8, #7b3fb3);
+            flex-shrink: 0;
+        }
+
+        button {
+            border: none;
+            outline: none;
+            padding: 14px 30px;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #a866d6, #7b3fb3);
+            color: white;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(123, 63, 179, 0.3);
+            transition: 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        button:hover {
+            transform: translateY(-4px) scale(1.04);
+            box-shadow: 0 15px 30px rgba(123, 63, 179, 0.4);
+        }
+
+        button:active {
+            transform: scale(0.96);
+        }
+
+        .message {
+            display: none;
+            margin-top: 25px;
+            text-align: left;
+            font-size: 15px;
+            line-height: 1.8;
+            flex: 1;
+            min-height: 0;
+            overflow-y: auto;
+            padding: 5px 12px 20px 5px;
+            animation: messageEnter 0.8s ease;
+        }
+
+        @keyframes messageEnter {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message p {
+            margin-bottom: 22px;
+        }
+
+        .message strong {
+            color: #7b3fb3;
+        }
+
+        .center-line {
+            text-align: center;
+            color: #7b3fb3;
+            font-size: 18px;
+            font-weight: 500;
+            margin: 30px 0 !important;
+        }
+
+        .signature {
+            text-align: center;
+            color: #7b3fb3;
+            font-size: 17px;
+            font-style: italic;
+            margin-top: 35px;
+        }
+
+        .message::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .message::-webkit-scrollbar-track {
+            background: rgba(123, 63, 179, 0.08);
+            border-radius: 10px;
+        }
+
+        .message::-webkit-scrollbar-thumb {
+            background: rgba(123, 63, 179, 0.35);
+            border-radius: 10px;
+        }
+
+        .message {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(123, 63, 179, 0.4) rgba(123, 63, 179, 0.08);
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                height: 92vh;
+                max-height: none;
+                padding: 32px 20px;
+                border-radius: 25px;
+            }
+
+            .main-heart {
+                font-size: 50px;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+
+            .subtitle {
+                font-size: 14px;
+            }
+
+            .message {
+                font-size: 14px;
+                line-height: 1.75;
+                padding-right: 7px;
+            }
+
+            .center-line {
+                font-size: 16px;
+            }
+
+            .signature {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="floating heart f1">💜</div>
+    <div class="floating pizza f2">🍕</div>
+    <div class="floating heart f3">♡</div>
+    <div class="floating pizza f4">🍕</div>
+    <div class="floating heart f5">💜</div>
+    <div class="floating pizza f6">🍕</div>
+
+    <main class="container">
+
+        <div class="main-heart">♡</div>
+
+        <h1>ELLOWW ALIII</h1>
+
+        <p class="subtitle">
+           BATI NA TAU PLS, PARA SAU
+        </p>
+
+        <div class="divider"></div>
+
+        <button onclick="showMessage()">
+            ALII OPENN MO NAA BAHAHHA ♡
+        </button>
+
+        <div class="message" id="message">
+
+            <p>Hello Ali,</p>
+
+            <p>
+                I honestly don't know what to do with this longing anymore.
+                Hindi ko na rin alam kung paano ko sasabihin lahat ng nararamdaman ko
+                without making you feel guilty or making you think na may kailangan kang
+                gawin about it. I just really miss you, Ali. Sobrang miss kita.
+                Minsan hindi ko na alam saan ko ilalagay yung feelings ko kasi ang dami
+                ko pa ring gustong sabihin pero ayoko naman na maramdaman mo na kailangan
+                mong sagutin lahat yun.
+            </p>
+
+            <p>
+                I hope I didn't disturb your peace. I really do. Ayokong maramdaman mo
+                na dahil nasasaktan ako, kailangan mong bumalik or kailangan mong ayusin
+                yung nararamdaman ko. Alam kong you chose your peace for a reason, and
+                I respect that. May sarili kang things na kailangan mong ayusin, may mga
+                feelings ka rin na kailangan mong intindihin, and I don't want to become
+                another thing na kailangan mong dalhin.
+            </p>
+
+            <p>
+                Pero gusto ko lang din maging honest sayo kasi ang hirap pala kapag
+                kinikimkim ko lahat. There are days na umiiyak ako kasi miss na miss
+                kita. Minsan pagkagising ko ikaw agad naiisip ko. Then habang kumakain,
+                naliligo, nag-eexercise, tumatakbo, nagpapahinga, hanggang bago matulog,
+                somehow ikaw pa rin. Hindi ko naman sinasadya. Nasanay lang talaga ako
+                na nandiyan ka.
+            </p>
+
+            <p>
+                Nasanay akong may gusto akong kausapin. May gusto akong kamustahin.
+                May gusto akong alagaan. Kahit random things lang, ikaw yung unang
+                pumapasok sa isip ko. Kaya nung nagbago lahat, parang hindi ko alam kung
+                paano ako babalik sa dati. Ginagawa ko naman yung normal kong ginagawa,
+                pero may part sakin na naghahanap pa rin sayo.
+            </p>
+
+            <p>
+                And please don't think I'm saying all of this to blame you. Hindi kita
+                sinisisi. Not for choosing your peace, not for choosing yourself, and
+                not for feeling whatever you're feeling right now. If anything, gusto ko
+                rin naman na maging okay ka. Ayokong manatili ka sakin dahil alam mong
+                nasasaktan ako. Ayokong maramdaman mong may utang kang something sakin
+                just because I love you.
+            </p>
+
+            <p>
+                My feelings are mine, Ali. Alam ko yun. Ako yung responsible sa
+                nararamdaman ko, and I'm not putting that on you.
+            </p>
+
+            <p class="center-line">
+                I just want you to know what you became to me.
+            </p>
+
+            <p>
+                To say I love you feels like an understatement. Kasi Ali, hindi ka
+                lang someone na minahal ko. Somehow you became someone who made my
+                ordinary days feel different. Yung mga simpleng bagay na dati normal
+                lang, naging mas meaningful because you were part of them.
+            </p>
+
+            <p>
+                Hindi ko nga alam kung kailan nangyari. Basta one day napansin ko na
+                lang ang dami ko nang gustong sabihin sayo. May random thought ako,
+                ikaw agad naiisip ko. May nangyayari sa araw ko, naiisip ko agad na
+                "I should tell Ali this." Minsan may nakikita lang ako na alam kong
+                magugustuhan mo and ikaw agad pumapasok sa isip ko.
+            </p>
+
+            <p>
+                And honestly, I don't regret it. Hindi ko pinagsisisihan na nakilala
+                kita. Hindi ko rin pinagsisisihan na minahal kita. Kahit masakit ngayon,
+                I would never call it a mistake. You became a part of my life that I'll
+                always be thankful for, kahit hindi ko alam kung saan talaga tayo
+                dadalhin ng lahat ng 'to.
+            </p>
+
+            <p>
+                If love means choosing someone kahit sa mga simpleng bagay lang,
+                then Ali, I'd still choose you. Not because I expect you to choose me
+                back. Hindi rin dahil gusto kitang pilitin na maramdaman yung
+                nararamdaman ko. I just choose you because that's honestly where my
+                heart is right now.
+            </p>
+
+            <p>
+                Hindi ko naman kayang sabihin sa sarili ko na "okay, stop feeling this"
+                tapos magically magiging okay na ako. I can give you space. I can
+                respect your decisions. I can try to accept whatever happens. Pero
+                ayoko rin magsinungaling sayo na nawala na yung feelings ko just
+                because things got complicated.
+            </p>
+
+            <p>
+                And I'm scared, Ali. Honestly, takot ako na baka matagal ko itong
+                dalhin. Baka matagal bago ako masanay sa thought na naging part ka
+                ng buhay ko and then kailangan kong matutong mabuhay without you the
+                same way.
+            </p>
+
+            <p>
+                Kasi hindi lang naman ikaw yung nami-miss ko. I miss the version of my
+                everyday life na nandiyan ka. Yung pag-check ng phone ko hoping na may
+                message ka. Yung may gusto akong ikwento sayo. Yung may random thought
+                ako and ikaw agad yung gusto kong kausapin. Yung feeling na kahit
+                ordinaryong araw lang, somehow mas okay siya kasi alam kong nandiyan
+                ka somewhere.
+            </p>
+
+            <p class="center-line">
+                I miss those little things.<br>
+                I miss you.
+            </p>
+
+            <p>
+                And yes, minsan naiisip ko sana iba yung nangyari. Sana bumalik tayo
+                sa time na simple lang lahat. Yung hindi ko kailangang mag-isip kung
+                okay lang ba mag-message, kung nakakaistorbo ba ako, or kung mas okay
+                bang manahimik muna.
+            </p>
+
+            <p>
+                Pero alam ko rin naman na hindi ko pwedeng ibalik yung oras. Hindi ko
+                pwedeng pilitin kang maging ready. Hindi ko pwedeng pilitin yung heart
+                mo na maramdaman yung gusto kong maramdaman mo. And honestly, I don't
+                want to do that to you.
+            </p>
+
+            <p>
+                If you asked me to wait, I would. If you asked me to give you space,
+                I would. If you told me you need time, I'd understand. And if someday
+                sabihin mo sakin na hindi mo na talaga nararamdaman yung same thing,
+                kahit sobrang sakit, I'd still respect you.
+            </p>
+
+            <p>
+                Hindi ako magiging okay agad, obviously. Hindi rin naman biglang
+                mawawala lahat ng feelings ko. Pero I'll accept it because your
+                feelings are yours, Ali. You get to decide what you want, and I don't
+                want you to feel like you have to choose me just because I love you.
+            </p>
+
+            <p>
+                And there's something else I want to be honest about.
+            </p>
+
+            <p>
+                If someday sabihin mo sakin na you really don't feel the same anymore,
+                I don't think I'd suddenly look for someone else. Hindi ko alam kung
+                gaano katagal, pero right now, I honestly don't see myself being
+                interested in someone else after you.
+            </p>
+
+            <p>
+                Not because ikaw lang ang taong pwede kong mahalin. Hindi rin dahil
+                gusto kong iparamdam sayo na kailangan mong bumalik. I just don't feel
+                like looking for someone else. My heart is still here, and I'm still
+                trying to understand everything.
+            </p>
+
+            <p>
+                I don't want another person just because I miss having someone.
+                Ayokong may gawing replacement sayo. Hindi rin magiging fair sa ibang
+                tao kung papasok ako sa something new habang ikaw pa rin yung laman
+                ng isip ko.
+            </p>
+
+            <p>
+                If someday may dumating ulit, then maybe it happens naturally. Pero
+                hindi ako maghahanap just because I'm trying to fill the space you
+                left.
+            </p>
+
+            <p class="center-line">
+                For now, I'm not looking.<br>
+                I'm not interested.
+            </p>
+
+            <p>
+                I'm just trying to figure out how to move forward without pretending
+                na you never mattered to me.
+            </p>
+
+            <p>
+                Maybe someday that will change. Maybe time will make things lighter.
+                Maybe one day I'll wake up and realize na hindi na ganun kasakit.
+                I don't know. Hindi ko rin gustong mag-promise ng something na hindi
+                ko naman kayang siguraduhin.
+            </p>
+
+            <p>
+                I just know na right now, my heart isn't ready for someone else.
+            </p>
+
+            <p>
+                And when I say I'm willing to risk a lot for you, hindi ko ibig sabihin
+                na kailangan mong gawin din yun para sakin. I'm not asking you to risk
+                your peace. I'm not asking you to choose me because I'm hurting. I'm
+                not asking you to stay because you feel bad.
+            </p>
+
+            <p>
+                I'm just telling you how much you mean to me.
+            </p>
+
+            <p>
+                Gusto ko lang na kapag nagdesisyon ka, alam mong choice mo talaga.
+                Walang guilt. Walang pressure. Walang feeling na kailangan mong piliin
+                ako para lang hindi ako masaktan.
+            </p>
+
+            <p>
+                If choosing your peace means stepping away from me, then I'll have
+                to learn how to respect that. Kahit masakit. Kahit may part sakin na
+                ayaw. I'll still respect it because I love you enough to understand
+                na hindi lahat ng gusto ko kailangan mong ibigay sakin.
+            </p>
+
+            <p>
+                But I also want you to know na may taong genuinely nagca-care sayo.
+                Someone who still wonders if you're eating properly, sleeping enough,
+                stressing yourself too much, or just taking care of yourself.
+            </p>
+
+            <p>
+                Someone who still prays for you kahit hindi na niya alam kung ano
+                talaga yung pinagdadaanan mo.
+            </p>
+
+            <p>
+                And yeah, that person is me.
+            </p>
+
+            <p>
+                I don't want my love to become something heavy for you. Gusto ko lang
+                maging honest. When I say I love you, hindi dahil gusto kitang angkinin.
+                It's because I genuinely care about you.
+            </p>
+
+            <p>
+                Kahit yung parts mo na confused, tired, scared, or hindi mo pa alam
+                kung saan ka pupunta. Hindi ko naman ine-expect na lagi mong alam yung
+                sagot. Hindi ko rin ine-expect na kailangan mong piliin ako just
+                because I chose you.
+            </p>
+
+            <p class="center-line">
+                I just want you to be okay.
+            </p>
+
+            <p>
+                Kahit may part sakin na gusto kitang nasa tabi ko, I still want you
+                to find your peace. Kahit miss na miss kita, ayokong maramdaman mo na
+                kailangan mong bumalik para lang tumigil ako sa pag-sakit.
+            </p>
+
+            <p>
+                I'd rather learn how to deal with my own feelings kaysa maging reason
+                na maramdaman mong trapped ka.
+            </p>
+
+            <p>
+                Pero Ali, hindi rin ako magsisinungaling sayo.
+            </p>
+
+            <p class="center-line">
+                I still hope.
+            </p>
+
+            <p>
+                Umaasa pa rin ako kahit alam kong hindi ko dapat gawing expectation
+                yung hope na yun. Maybe someday, kapag mas okay ka na and mas malinaw
+                na sayo yung feelings mo, maaalala mo ako.
+            </p>
+
+            <p>
+                Maybe maaalala mo yung taong gustong makilala ka beyond everything
+                else. Yung taong gustong alagaan ka, kausapin ka, and be there for you
+                without asking you to change who you are.
+            </p>
+
+            <p class="center-line">
+                Maybe someday we'll meet again in a better place.
+            </p>
+
+            <p class="center-line">
+                Maybe not.
+            </p>
+
+            <p class="center-line">
+                Hindi ko alam.<br>
+                And I'm trying to be okay with that.
+            </p>
+
+            <p>
+                What I know is that I loved you honestly. Hindi perfect. Hindi laging
+                tama. May mga bagay akong nasabi at nagawa na sana hindi ko na ginawa.
+                May times din na baka naging sobra ako, or hindi ko na-realize na
+                overwhelming na pala yung way ko ng pagpapakita ng care.
+            </p>
+
+            <p>
+                I know I made mistakes. Pero kahit sa lahat ng yun, one thing I know
+                is that what I felt for you was real.
+            </p>
+
+            <p>
+                I don't want you to remember me as someone who made you feel guilty
+                for leaving. Ayokong yun yung maging memory mo sakin.
+            </p>
+
+            <p>
+                I want you to remember me as someone who loved you deeply but also
+                learned that you have your own choices. Someone who can say
+                "I still love you" and at the same time say
+                "I respect whatever you decide."
+            </p>
+
+            <p>
+                Kasi yun naman talaga yung gusto kong sabihin sayo.
+            </p>
+
+            <p class="center-line">
+                I love you, Ali.
+            </p>
+
+            <p class="center-line">
+                Still.
+            </p>
+
+            <p>
+                And maybe I'll love you for a while longer. Maybe matagal bago ako
+                maging okay. Maybe may mga umaga pa na ikaw agad hahanapin ng isip ko.
+                Maybe may mga gabi pa na bigla kitang mamimiss dahil may naalala lang
+                ako.
+            </p>
+
+            <p>
+                But I'll try. I'll keep trying to take care of myself while carrying
+                all of this.
+            </p>
+
+            <p>
+                Hindi ko alam kung saan ako dadalhin ng pagmamahal na 'to. Hindi ko
+                alam kung may next chapter pa ba tayo or hanggang dito na lang talaga.
+                I don't know if someday we'll find our way back to each other or if
+                eventually magiging dalawang tao na lang tayo na once meant so much
+                to each other.
+            </p>
+
+            <p class="center-line">
+                And honestly, that thought hurts.
+            </p>
+
+            <p>
+                Pero kahit masakit, grateful pa rin ako.
+            </p>
+
+            <p>
+                Grateful ako na nakilala kita. Grateful ako na naging part ka ng buhay
+                ko. Grateful ako sa mga memories, sa mga conversations, sa mga simpleng
+                moments na baka maliit lang para sayo pero naging malaking bagay sakin.
+            </p>
+
+            <p class="center-line">
+                You were never just a chapter to me, Ali.
+            </p>
+
+            <p class="center-line">
+                You became part of my story.
+            </p>
+
+            <p>
+                And if someday you wonder if I meant everything I said before, I did.
+                If you wonder if my feelings were real, they were. If you wonder if
+                I still care, I do.
+            </p>
+
+            <p>
+                And if you ever ask me why I still choose you, I probably won't have
+                some perfect answer.
+            </p>
+
+            <p class="center-line">
+                Maybe because it's you.
+            </p>
+
+            <p>
+                Maybe because somewhere along the way, naging ikaw na yung taong
+                natutunan ng puso kong mahalin nang ganito kalalim.
+            </p>
+
+            <p>
+                And maybe because kahit ang daming nangyari, I still genuinely want
+                good things for you.
+            </p>
+
+            <p>
+                I love you, Ali. Not as a demand. Not as something you owe me. Not
+                because I want you to feel responsible for my feelings.
+            </p>
+
+            <p>
+                I love you because that's honestly what I feel.
+            </p>
+
+            <p>
+                And whatever you decide, please don't feel guilty for being honest
+                with me.
+            </p>
+
+            <p>
+                If you need space, I'll respect it.
+            </p>
+
+            <p>
+                If you need time, I'll understand.
+            </p>
+
+            <p>
+                If you need to walk away, I'll try my best to let you.
+            </p>
+
+            <p>
+                And if someday, somehow, you find your way back to me, I hope you'll
+                find someone who still cares about you, but hopefully wiser this time.
+                Someone who learned how to love you without making you feel like you
+                have to carry the weight of that love.
+            </p>
+
+            <p>
+                For now, I just want you to know na may isang tao dito who still
+                chooses you, who still cares about you, who still prays for you, and
+                who still hopes that life becomes kinder to you.
+            </p>
+
+            <p class="center-line">
+                That person is me.
+            </p>
+
+            <p class="center-line">
+                I love you, Ali.
+            </p>
+
+            <p class="signature">
+                And even if someday I have to learn how to love you from a distance,
+                I'll always be grateful that, at one point in my life, I got to love
+                you at all. ♡
+            </p>
+
+        </div>
+
+    </main>
+
+    <script>
+        function showMessage() {
+            const message = document.getElementById("message");
+            const button = document.querySelector("button");
+
+            if (message && button) {
+                message.style.display = "block";
+                button.style.display = "none";
+                message.scrollTop = 0;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
